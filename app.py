@@ -2,7 +2,6 @@ import flask
 from flask import request, jsonify
 
 app = flask.Flask(__name__)
-app.config["DEBUG"] = True
 
 # Create some test data for our catalog in the form of a list of dictionaries.
 books = [
@@ -35,4 +34,4 @@ def home():
 def api_all():
     return jsonify(books)
 
-app.run()
+app.run(host='0.0.0.0', port=8080)
